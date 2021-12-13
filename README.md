@@ -8,7 +8,7 @@ GLAM-Parti/ML is the version of GLAM-Parti which integrates machine learning alg
 
 In order to run GLAM-Parti/ML against the data set of the ‘Hot Serial Cereal Experiment’ for wheat you need to:
 
-1. Download the folder ‘GLAM_Parti_model_all_scripts.zip’ here: https://github.com/GLAM-Leeds/GLAM
+1. Download the folder ‘GLAM_Parti_model_all_scripts.zip’
 
 2.  Extract the folder in your home directory.
 
