@@ -2,21 +2,33 @@
 
 **Overview**
 
-GLAM-Parti-ML is a new framework which integrates machine learning algorithms into the process-based crop model, GLAM-Parti, for the prediction of crop biomass, grain yield and the phenological stage at daily time step. The incorporation of ML into the model eliminates the need of stress factors and reduces the physiological model parameters down to four. GLAM-Parti-ML is written in R and the steps for downloading and running the model to produce the results and figures of the manuscript are given below.  
+GLAM-Parti-ML is a new framework which integrates machine learning algorithms into the process-based crop model, GLAM-Parti, for the prediction of crop biomass, grain yield and the crop phenological stage at daily time step. The incorporation of ML into the model eliminates the need of stress factors and reduces the physiological model parameters down to four. GLAM-Parti-ML is written in R and the steps for downloading and running the model to reproduce the results and figures of the manuscript are given below.  
 
-**Steps to run GLAM-Parti/ML and reproduce the results of the paper**
+**Steps to run GLAM-Parti-ML and reproduce the results of the paper**
 
-In order to run GLAM-Parti-ML against the data set of the ‘Hot Serial Cereal Experiment’ for wheat you need to:
+1. Download all folders and R scripts
 
-1. Download the folder ‘GLAM_Parti_model_all_scripts.zip’
+2. Make sure that you've installed all R packages required. These can be found in the script 'Required_packages.R'.
 
-2.  Extract the folder in your home directory.
+3. Go to line 5 of the script 'Main_ML_and_GLAM_Parti_script.R' and set your own GLAM-Parti directory with the setwd command. This should be the path where you store the model.
 
-3. Make sure that you've installed all R packages required. These can be found in the script 'Import_crop_data_and_set_functions.R'.
+4. In 'Main_ML_and_GLAM_Parti_script.R' - line 15 - the default option is the config file 'Config_file_HSC_data.R'. Inside this config file, there is the option to use two different ML models, Random Forests (RF) and XGBoost. Initially, please use RF (i.e. you mute line 51: XGBoost).  
 
-4. Go to the script 'Evaluate_GParti_50_train.R' and set your home directory using the setwd command of the first line. This is the path where you store the model.
+5. Run Main_ML_and_GLAM_Parti_script.R and go to the folder 'Results'. The model should have produced Fig. 3 of the manuscript.
 
-5. Run the script 'Evaluate_GParti_50_train.R' and if successful, the model should produce a figure (Figure3) in the following path: Results/Figures/Figure3.pdf. In my personal laptop, this script takes around 5 minutes to complete. If everything goes well, Figure3 should be identical to Fig. 3 of the GLAM-Parti/ML paper.
+6. Next, change 'Main_ML_and_GLAM_Parti_script.R' - line 15 - to the config file 'Config_file_HSC_and_ISGHE_data.R'.
+
+7. Open 'Config_file_HSC_and_ISGHE_data.R' and choose RF as ML model. This is done by unmuting line 52 (RF) and muting line 53 (XGBoost).
+
+8. Run 'Main_ML_and_GLAM_Parti_script.R' and go to the folder 'Results'. The model should have produced Fig. 5 and Fig. S6 of the manuscript.
+
+9. Open 'Config_file_HSC_and_ISGHE_data.R' and choose XGBoost as ML model. This is done by muting line 52 (RF) and unmuting line 53 (XGBoost).
+
+10. Run 'Main_ML_and_GLAM_Parti_script.R' and go to the folder 'Results'. The model should have produced Fig. S7 of the manuscript.
+
+11. Run Special/Scripts/Compare_GLAM_and_GParti.R. The moodel should have produced Table 2 and Fig. S5 of the manuscript.
+
+6. Run the script 'Evaluate_GParti_50_train.R' and if successful, the model should produce a figure (Figure3) in the following path: Results/Figures/Figure3.pdf. In my personal laptop, this script takes around 5 minutes to complete. If everything goes well, Figure3 should be identical to Fig. 3 of the GLAM-Parti/ML paper.
 
 6. Go to the script 'Evaluate_GParti_various_train.R' and set your home directory using the setwd command of the first line. This is the same as step 4 but for the second model evaluation script.
 
