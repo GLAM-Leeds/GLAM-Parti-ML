@@ -36,20 +36,20 @@ GLAM-Parti-ML is a new framework which integrates machine learning algorithms in
 
 
 
-**Explanation of GLAM-Parti/ML scripts**
+**Explanation of GLAM-Parti-ML scripts**
 
-`Import_crop_data_and_set_functions.R:` This script imports the observed crop data (biomass, yield, phenology) that will be used in the training process of the ML algorithms and also derives the Newton-Raphson method of SEMAC, as well as any functions that will be used in the model evaluation process (e.g. RMSE).
+`Main_ML_and_GLAM_Parti_script.R:` This is the core script of the model, which calls all other scripts to import the weather and crop data, fit the time-series of biomass and grain mass in the training set, train and optimize the ML models, run GLAM-Parti-ML and evaluate the model performance.
 
-`Model_parameters.R:` This script sets the values of the 4 physiological model parameters of GLAM-Parti: light extinction coefficient (k); canopy Specific Leaf Area (SLA); a, b coefficients of the allometric relationship between log-mass of stems (MS) vs. log-photosynthetic organ mass (MP).
+`Required_packages.R:` Loads all packages required for the GLAM-Parti-ML model runs.
 
-`Biomass_and_yield_s_curves.R:` This script uses the measured above-ground biomass and grain yield of all data points in the ML training set to fit sigmoid time-series curves according to the method described in Yin et al., 2003 (A Flexible Sigmoid Function of Determinate Growth). This step cannot be undertaken if there is not at least the end-of-season biomass and grain yield measurements, as well as one more mid-season measurement of both variables.
+`Biomass_and_yield_s_curves.R:` This script uses the above-ground biomass and grain mass measurements (both within season and the end-of-season values) of the experiments in the training set to fit sigmoid time-series curves according to the method described in Yin et al., 2003 (A Flexible Sigmoid Function of Determinate Growth).
 
-`Machine_learning_for_RUE_HI_and_Phenology.R:` This script loads the input weather data (Tmin, Tmax, Srad, VPD etc.) of each data point in the training period, as well as the time series of biomass and yield (which have been  previously computed in the script Biomass_and_yield_s_curves.R). This allows the derivation of the target variables RUE, dHI/dt and iphen. Following suitable feature selection, the three ML algorithms (corresponding to the 3 target variables) are trained. Currently, the available ML models are Random Forests and XGboost. 
+`ML_models_for_RUE_HI_and_Phenology.R:` This script loads the input weather data (Tmin, Tmax, Srad, VPD etc.) of each experiment in the training period, as well as the time series of biomass and yield (which have been previously computed in the script Biomass_and_yield_s_curves.R). This allows the derivation of the target variables RUE, dHI/dt and iphen. Following suitable feature selection, the three ML algorithms (corresponding to the 3 target variables) are trained. Currently, the available ML models are Random Forests and XGboost. 
 
-`Optimize_ML_model_hyperparameters.R:` This script optimizes the ML model hyperparameters of both RF and XGBoost using Bayesian search with 10-fold cross validation in 20 iteration setting.
+`Optimize_ML_model_hyperparameters.R:` This script optimizes the ML model hyperparameters of both RF and XGBoost using Bayesian search with 10-fold cross validation in 10 iteration setting.
 
-`Run_GLAM_Parti.R:` This script imports the weather data of the given data point and year and calls the GLAM-Parti model.
+`ML_optimization_options.R:` This script prepares the hyperparameter optimization by choosing the correct options based on the target variable (e.g. regression vs. classification, choice of evaluation metric etc.)  
 
-`GLAM_Parti_model.R:` This script runs the GLAM-Parti crop model and produces daily estimations of above-ground biomass and individual organ mass (stems, photosynthetic organs, grains e.t.c.). It also estimates the phenological stage (days to anthesis, maturity e.t.c.), and predicts the end-of-season biomass and grain yield.
+`Run_GLAM_Parti_model.R:` This script runs the GLAM-Parti crop model and produces daily estimations of above-ground biomass and individual organ mass (stems, photosynthetic organs, grains e.t.c.). It also estimates the phenological stage (days to anthesis, maturity e.t.c.), and predicts the end-of-season biomass and grain yield.
 
-`Evaluate_Gparti_50_train.R` and `Evaluate_Gparti_various_train.R:` These scripts are specific to the evaluation of the GLAM-Parti/ML model against the ‘Hot Serial Cereal Experiment’ for wheat. The script ‘Evaluate_Gparti_50_train.R’ produces Fig. 3 of the GLAM-Parti/ML paper. The script ‘Evaluate_Gparti_various_train.R’ produces Fig. 4 and 4S, as well as the Tables S1 – S4.     
+`Evaluate_GLAM_Parti_skill.R:` This scripts evaluates the performance of GLAM-Parti-ML against the ‘Hot Serial Cereal Experiment’ for wheat (HSC) and the International Heat Stress Genotype Experiment (IHSGE). 
