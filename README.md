@@ -26,13 +26,15 @@ GLAM-Parti-ML is a new framework which integrates machine learning algorithms in
 
 10. Run 'Main_ML_and_GLAM_Parti_script.R' and go to the folder 'Results'. The model should have produced Fig. S7 of the manuscript.
 
-11. Run Special/Scripts/Compare_GLAM_and_GParti.R. The moodel should have produced Table 2 and Fig. S5 of the manuscript.
+11. Open the script 'Compare_GLAM_and_GParti.R', which is located in the folder 'Special_scripts', go to line 2 and set your own working directory (the directory where you store the model) 
 
-6. Run the script 'Evaluate_GParti_50_train.R' and if successful, the model should produce a figure (Figure3) in the following path: Results/Figures/Figure3.pdf. In my personal laptop, this script takes around 5 minutes to complete. If everything goes well, Figure3 should be identical to Fig. 3 of the GLAM-Parti/ML paper.
+11. Run the script 'Special_scripts/Compare_GLAM_and_GParti.R'. The moodel should produce Table 2 and Fig. S5 of the manuscript in the folder 'Results'.
 
-6. Go to the script 'Evaluate_GParti_various_train.R' and set your home directory using the setwd command of the first line. This is the same as step 4 but for the second model evaluation script.
+12. Open the script 'GParti_sens_analysis.R', which is located in the folder 'Special_scripts', go to line 24 and set your own working directory (the directory where you store the model) 
 
-7. Run the script 'Evaluate_GParti_various_train.R' and if successful, the model should produce the figures 4  and 4S in the following path: Results/Figures/. This script also produces the tables ‘Anthesis’, ‘Maturity’, ‘Biomass’ and ‘Yield’ in the following path: Results/Tables/. This script takes a long time to complete - around 10 hours in my laptop. If everything goes well, the derived figures should be identical to Fig.4 and 4S of the GLAM-Parti/ML paper and the Tables ‘Anthesis’, ‘Maturity’, ‘Biomass’ and ‘Yield’ should reproduce the values in Tables S1-S4 of the paper.
+13. Run the script 'Special_scripts/GParti_sens_analysis.R'. The moodel should produce Fig. 4, Fig. S4 and Tables S2, S3, S4, S5 of the manuscript in the folder 'Results'.
+
+
 
 **Explanation of GLAM-Parti/ML scripts**
 
