@@ -1,4 +1,4 @@
-# GLAM_parti
+# GLAM-Parti-ML
 
 **Overview**
 
