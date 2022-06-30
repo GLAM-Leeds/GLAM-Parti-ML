@@ -6,7 +6,7 @@ GLAM-Parti-ML is a new framework which integrates machine learning algorithms in
 
 **Steps to run GLAM-Parti-ML and reproduce the results of the paper**
 
-1. Download all folders and R scripts in your working directory
+1. Download all folders and R scripts in your working directory.
 
 2. Make sure that you've installed all R packages required. These can be found in the script 'Required_packages.R'.
 
@@ -26,7 +26,7 @@ GLAM-Parti-ML is a new framework which integrates machine learning algorithms in
 
 10. Run 'Main_ML_and_GLAM_Parti_script.R' and go to the folder 'Results'. The model should have produced Fig. S7 of the manuscript.
 
-11. Open the script 'Compare_GLAM_and_GParti.R', which is located inside the folder 'Special_scripts', go to line 2 and set your own working directory (the directory where you store the model) 
+11. Open the script 'Compare_GLAM_and_GParti.R', which is located inside the folder 'Special_scripts', go to line 2 and set your own working directory (the directory where you store the model) .
 
 11. Run the script 'Special_scripts/Compare_GLAM_and_GParti.R'. The moodel should produce Table 2 and Fig. S5 of the manuscript in the folder 'Results'.
 
@@ -40,7 +40,7 @@ GLAM-Parti-ML is a new framework which integrates machine learning algorithms in
 
 `Main_ML_and_GLAM_Parti_script.R:` This is the core script of the model, which calls all other scripts to import the weather and crop data, fit the time-series of biomass and grain mass in the training set, train and optimize the ML models, run GLAM-Parti-ML and evaluate the model performance.
 
-`Required_packages.R:` Loads all packages required for the GLAM-Parti-ML model runs.
+`Required_packages.R:` This script loads all packages required for the GLAM-Parti-ML model runs.
 
 `Biomass_and_yield_s_curves.R:` This script uses the above-ground biomass and grain mass measurements (both within season and the end-of-season values) of the experiments in the training set to fit sigmoid time-series curves according to the method described in Yin et al., 2003 (A Flexible Sigmoid Function of Determinate Growth).
 
