@@ -2,7 +2,7 @@
 
 **Overview**
 
-GLAM-Parti/ML is the version of GLAM-Parti which integrates machine learning algorithms into the model for the prediction of crop biomass, grain yield and the phenological stage at daily time step. It is the latest version of GLAM-Parti with very significant differences from the previous ones. Briefly, the incorporation of ML into the model increases the predictive capacity dramatically, eliminates all stress factors and reduces the physiological model parameters down to four. Moreover, GLAM-Parti/ML is the first version of GLAM-Parti that is not written in Fortran. All scripts are written in R, thus downloading and reproducing the model runs is a much more straight-forward task. Overall, any potential users of GLAM-Parti are strongly encouraged to use the latest version (GLAM-Parti/ML) and ignore the previous model versions (GLAM-Parti and GLAM-ROC). 
+GLAM-Parti-ML integrates machine learning algorithms into the process-based crop model, GLAM-Parti, for the prediction of crop biomass, grain yield and the phenological stage at daily time step. The incorporation of ML into the model eliminates the need of stress factors and reduces the physiological model parameters down to four. GLAM-Parti-ML is written in R and the steps for downloading and running the model to the produce the results and figures of the manuscript are given below.  
 
 **Steps to run GLAM-Parti/ML and reproduce the results of the paper**
 
