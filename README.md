@@ -26,11 +26,11 @@ GLAM-Parti-ML is a new framework which integrates machine learning algorithms in
 
 10. Run 'Main_ML_and_GLAM_Parti_script.R' and go to the folder 'Results'. The model should have produced Fig. S7 of the manuscript.
 
-11. Open the script 'Compare_GLAM_and_GParti.R', which is located in the folder 'Special_scripts', go to line 2 and set your own working directory (the directory where you store the model) 
+11. Open the script 'Compare_GLAM_and_GParti.R', which is located inside the folder 'Special_scripts', go to line 2 and set your own working directory (the directory where you store the model) 
 
 11. Run the script 'Special_scripts/Compare_GLAM_and_GParti.R'. The moodel should produce Table 2 and Fig. S5 of the manuscript in the folder 'Results'.
 
-12. Open the script 'GParti_sens_analysis.R', which is located in the folder 'Special_scripts', go to line 24 and set your own working directory (the directory where you store the model) 
+12. Open the script 'GParti_sens_analysis.R', which is located inside the folder 'Special_scripts', go to line 24 and set your own working directory (the directory where you store the model). 
 
 13. Run the script 'Special_scripts/GParti_sens_analysis.R'. The moodel should produce Fig. 4, Fig. S4 and Tables S2, S3, S4, S5 of the manuscript in the folder 'Results'.
 
