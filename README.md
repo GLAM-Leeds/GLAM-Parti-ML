@@ -6,11 +6,11 @@ GLAM-Parti-ML is a new framework which integrates machine learning algorithms in
 
 **Steps to run GLAM-Parti-ML and reproduce the results of the paper**
 
-1. Download all folders and R scripts
+1. Download all folders and R scripts in your working directory
 
 2. Make sure that you've installed all R packages required. These can be found in the script 'Required_packages.R'.
 
-3. Go to line 5 of the script 'Main_ML_and_GLAM_Parti_script.R' and set your own GLAM-Parti directory with the setwd command. This should be the path where you store the model.
+3. Go to line 5 of the script 'Main_ML_and_GLAM_Parti_script.R' and set your own GLAM-Parti working directory with the setwd command. This should be the path where you store the model.
 
 4. In 'Main_ML_and_GLAM_Parti_script.R' - line 15 - the default option is the config file 'Config_file_HSC_data.R'. Inside this config file, there is the option to use two different ML models, Random Forests (RF) and XGBoost. Initially, please use RF (i.e. you mute line 51: XGBoost).  
 
