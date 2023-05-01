@@ -2,7 +2,7 @@
 # 10-fold cross-validation
 set.seed(1234)
 ncores <- 4
-folds <- vfold_cv(ML_table_for_opt, v=10, strata = as.name(target_variable)) 
+folds <- vfold_cv(ML_table_for_opt, v=20, strata = as.name(target_variable)) 
 
 if (ML_model == 'Random_forests'){
   # Define hyperparameters that will be tuned in RF model
